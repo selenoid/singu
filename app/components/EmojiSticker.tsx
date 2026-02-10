@@ -23,7 +23,7 @@ export default function EmojiSticker({ imageSize, stickerSource }: Props) {
   });
   
   const drag = Gesture.Pan().onChange(event => {
-    console.log('dagariya: ', event.translationX.toPrecision(5), event.translationY.toPrecision(5))
+  // console.log('dagariya: ', event.translationX.toPrecision(5), event.translationY.toPrecision(5))
   translateX.value += event.changeX;
   translateY.value += event.changeY;
 });
