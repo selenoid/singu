@@ -1,5 +1,5 @@
 import * as ImagePicker from 'expo-image-picker';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ImageSourcePropType, StyleSheet, View } from 'react-native';
 
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
@@ -21,6 +21,7 @@ export default function Index() {
 
 
   const pickImageAsync = async () => {
+    console.log('pick an image async..')
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ['images'],
       allowsEditing: true,
@@ -40,6 +41,7 @@ export default function Index() {
   };
 
   const onAddSticker = () => {
+    console.log('on add sticker...')
     setIsModalVisible(true);
   };
 
@@ -50,6 +52,23 @@ export default function Index() {
   const onSaveImageAsync = async () => {
     // we will implement this later
   };
+
+  useEffect(
+    ()=>{
+      console.log('IsModelVisible changed...');
+    }, [isModalVisible]
+  )
+
+  useEffect(
+    ()=>{
+      console.log('init...')
+      setTimeout(
+        ()=>{
+          console.log('initing starter function...')
+        },1000
+      )
+    }, []
+  )
 
   return (
        <GestureHandlerRootView style={styles.container}>
