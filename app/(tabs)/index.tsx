@@ -54,24 +54,24 @@ export default function Index() {
   };
 
   useEffect(
-    ()=>{
+    () => {
       console.log('IsModelVisible changed...');
     }, [isModalVisible]
   )
 
   useEffect(
-    ()=>{
+    () => {
       console.log('init...')
       setTimeout(
-        ()=>{
+        () => {
           console.log('initing starter function...')
-        },1000
+        }, 1000
       )
     }, []
   )
 
   return (
-       <GestureHandlerRootView style={styles.container}>
+    <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
         <ImageViewer imgSource={PlaceholderImage} selectedImage={selectedImage} />
         {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
