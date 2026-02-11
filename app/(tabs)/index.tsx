@@ -35,8 +35,13 @@ export default function Index() {
       alert('You did not select any image.');
     }
   };
+  
 
-  const onReset = () => {
+  const starter = () => {
+    console.log('dandini!')
+  };
+
+  const onReset = () => {r
     setShowAppOptions(false);
   };
 
@@ -61,10 +66,10 @@ export default function Index() {
 
   useEffect(
     () => {
-      console.log('init...')
       setTimeout(
         () => {
           console.log('initing starter function...')
+          starter()
         }, 1000
       )
     }, []

@@ -4,18 +4,27 @@ import { Tabs } from 'expo-router';
 export default function TabLayout() {
   return (
     <Tabs
-  screenOptions={{
-    tabBarActiveTintColor: '#ffd33d',
-    headerStyle: {
-      backgroundColor: '#25292e',
-    },
-    headerShadowVisible: false,
-    headerTintColor: '#fff',
-    tabBarStyle: {
-      backgroundColor: '#25292e',
-    },
-  }}
->
+      screenOptions={{
+        tabBarActiveTintColor: '#ffd33d',
+        headerStyle: {
+          backgroundColor: '#25292e',
+        },
+        headerShadowVisible: false,
+        headerTintColor: '#fff',
+        tabBarStyle: {
+          backgroundColor: '#25292e',
+        },
+      }}
+    >
+      <Tabs.Screen
+        name="contact"
+        options={{
+          title: 'Contact Us',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons name={focused ? 'mail' : 'mail-outline'} color={color} size={24} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
@@ -34,6 +43,7 @@ export default function TabLayout() {
           ),
         }}
       />
+
     </Tabs>
   );
 }
