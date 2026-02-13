@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import App from './App';
 
 export default function RootLayout() {
-
-  debugger
-  useEffect(()=>{
+  useEffect(() => {
     console.log('root layout...')
-  },[])
+  }, [])
 
   return (
-    <App/>
+    <>
+      <App />
+    </>
   );
 }

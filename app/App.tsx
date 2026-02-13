@@ -1,18 +1,65 @@
-import { useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+
+// import AppLoading from 'expo-app-loading';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet } from 'react-native';
+import AuthNavigator from './navigation/AuthNavigator';
+import AppLoading from './screens/AppLoading';
+import AppNavigator from './screens/AppNavigator';
 
 export default function App() {
-  debugger
   useEffect(() => {
     console.log('App...')
   }, [])
+
+  const [user, setUser] = useState('');
+  const [IsReady, setIsReady] = useState(false);
+
+  /* const RestoreUser = async () => {
+    const token = await AsyncStorage.getItem('token');
+    if (token) {
+      setUser(true);
+    } else {
+      setUser(false);
+    }
+  }; */
+
+
+  useEffect(
+    () => {
+      //setUser
+      setTimeout(() => {
+        setUser('{"name":"EMRE SElEN"}')
+        console.log('loaded1')
+      }, 1000);
+
+      setTimeout(() => {
+        setIsReady(true)
+        console.log('loaded1')
+      }, 4000);
+
+      setTimeout(() => {
+        // setUser('')
+        // console.log('useer expired...')
+      }, 6000);
+    }, []
+  )
+
+  if (!IsReady) {
+    return (
+      <AppLoading
+      /* startAsync={RestoreUser}
+      onFinish={() => setIsReady(true)}
+      onError={() => {}} */
+      />
+    );
+  }
+
   return (
-    <View style={styles.container}>
-      {/* <RootLayout ></RootLayout> */}
-    </View>
+    <>
+      {user ? <AppNavigator /> : <AuthNavigator />}
+    </>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -23,5 +70,5 @@ const styles = StyleSheet.create({
   },
   text: {
     color: '#fff',
-  },
+  }
 });

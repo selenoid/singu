@@ -1,0 +1,22 @@
+import { StyleSheet, Text, View } from "react-native";
+
+const AuthNavigator = () => {
+  return <View style={styles.container}>
+    <Text style={styles.text}>AUTH SCREEN</Text>
+  </View>
+}
+
+
+export default AuthNavigator;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#25292e',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    color: '#fff',
+  }
+});
