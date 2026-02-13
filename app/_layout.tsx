@@ -1,13 +1,14 @@
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
+import { useEffect } from 'react';
+import App from './App';
 
 export default function RootLayout() {
+
+  debugger
+  useEffect(()=>{
+    console.log('root layout...')
+  },[])
+
   return (
-    <>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      </Stack>
-      <StatusBar style="auto" />
-    </>
+    <App/>
   );
 }

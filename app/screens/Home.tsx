@@ -1,12 +1,17 @@
+import { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function AboutScreen() {
+export default function Home() {
+    useEffect(() => {
+      console.log('Home!')
+    }, [])
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>About screen</Text>
+      <Text style={styles.text}>Home Screen</Text>
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
