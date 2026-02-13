@@ -14,10 +14,5 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 26,
     color: '#ccc',
-  },
-  input: {
-    color: '#fff',
-    fontSize: 20,
-    fontWeight: 500
   }
 });

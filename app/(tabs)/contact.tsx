@@ -1,4 +1,4 @@
-import { StyleSheet, TextInput, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Header from '../components/Header';
 import InputForm from '../components/InputForm';
 
@@ -8,13 +8,10 @@ export default function AboutScreen() {
       {/* <Text style={styles.header}>About Contact</Text> */}
       <Header label={'Contact Us!'} />
       
-      <InputForm placeHolder={'Enter your name'} onChange={function (): void {
-        console.log('triptik...');
-      } } label={''} />
+      <InputForm placeHolder={'Enter your name'} /* onChange={function (): void { console.log('name...'); } }  *//>
+
+      <InputForm placeHolder={'Enter mail'} autoCorrection={true} keyboardType='email-address'/* onChange={function (): void {console.log('mail...');} } */ />
       
-      <TextInput style={styles.input}
-        placeholder="Enter mail"
-        placeholderTextColor="#fc0" />
     </View>
   );
 }
