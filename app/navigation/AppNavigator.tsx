@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import AccountScreen from '../navigation/AccountScreen';
-import HomeScreen from './HomeScreen';
+import AccountScreen from '../screens/AccountScreen';
+import HomeScreen from '../screens/HomeScreen';
 
 
 const Tab = createBottomTabNavigator();

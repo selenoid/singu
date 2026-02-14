@@ -2,9 +2,9 @@
 // import AppLoading from 'expo-app-loading';
 import React, { useEffect, useState } from 'react';
 import { StyleSheet } from 'react-native';
+import AppNavigator from './navigation/AppNavigator';
 import AuthNavigator from './navigation/AuthNavigator';
 import AppLoading from './screens/AppLoading';
-import AppNavigator from './screens/AppNavigator';
 
 export default function App() {
   useEffect(() => {
